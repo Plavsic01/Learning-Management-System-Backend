@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/backend.iml" filepath="$PROJECT_DIR$/.idea/backend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/discovery-server/discovery-server.iml" filepath="$PROJECT_DIR$/discovery-server/discovery-server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/university-service/university-service.iml" filepath="$PROJECT_DIR$/university-service/university-service.iml" />
     </modules>
   </component>
 </project>
