@@ -1,9 +1,16 @@
 package com.lms.university.service.dto;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CountryDTO {
 
     private Long id;
@@ -15,27 +22,4 @@ public class CountryDTO {
         this.name = name;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<CityDTO> getCities() {
-        return cities;
-    }
-
-    public void setCities(List<CityDTO> cities) {
-        this.cities = cities;
-    }
 }

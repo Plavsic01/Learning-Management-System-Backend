@@ -65,7 +65,6 @@ public class TokenUtils {
         claims.put("sub",userDetails.getUsername());
         claims.put("created",new Date(System.currentTimeMillis()));
         claims.put("roles",userDetails.getAuthorities());
-        System.out.println(userDetails.getAuthorities());
 
         return Jwts.builder().setClaims(claims).setExpiration(new Date(System.currentTimeMillis() + expiration * 1000))
                 .signWith(getKey()).compact();

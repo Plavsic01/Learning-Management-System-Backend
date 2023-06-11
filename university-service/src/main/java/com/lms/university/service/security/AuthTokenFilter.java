@@ -17,6 +17,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import java.io.IOException;
 
 public class AuthTokenFilter extends UsernamePasswordAuthenticationFilter {
+
     @Autowired
     UserDetailsService userDetailsService;
     @Autowired
