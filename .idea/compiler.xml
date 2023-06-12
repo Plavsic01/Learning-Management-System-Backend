@@ -10,10 +10,12 @@
         <module name="university-service" />
         <module name="discovery-server" />
         <module name="user-service" />
+        <module name="subject-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="discovery-server" target="17" />
+      <module name="subject-service" target="17" />
       <module name="university-service" target="17" />
       <module name="user-service" target="17" />
     </bytecodeTargetLevel>
@@ -21,6 +23,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="discovery-server" options="-parameters" />
+      <module name="subject-service" options="-parameters" />
       <module name="university-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>

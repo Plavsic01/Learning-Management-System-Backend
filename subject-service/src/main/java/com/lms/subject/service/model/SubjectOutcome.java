@@ -1,8 +1,6 @@
-package com.lms.user.service.model;
-
+package com.lms.subject.service.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,14 +9,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class UserPrivileges {
+public class SubjectOutcome {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String description;
+    private Integer schedule;
     @ManyToOne
-    @NotNull(message = "User is required")
-    private User user;
+    private Subject lectureSubject;
     @ManyToOne
-    @NotNull(message = "Privilege is required")
-    private Privileges privileges;
+    private Subject practicalSubject;
+
+
+
+
 }
