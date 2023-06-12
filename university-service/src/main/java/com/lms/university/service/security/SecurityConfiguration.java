@@ -49,13 +49,21 @@ public class SecurityConfiguration {
     }
 
     @Bean
-    public SecurityFilterChain configure(HttpSecurity http, AuthenticationConfiguration conf) throws Exception {
-        return http.csrf()
-                .disable()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+    public SecurityFilterChain configure(HttpSecurity http, AuthTokenFilter authTokenFilter) throws Exception {
+
+        return http.addFilterBefore(authTokenFilter, UsernamePasswordAuthenticationFilter.class)
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .addFilterBefore(authTokenFilterBean(conf), UsernamePasswordAuthenticationFilter.class)
+                .csrf().disable()
+                .authorizeHttpRequests()
+                .requestMatchers("/api/faculty/**").permitAll()
+                .requestMatchers("/api/city/**").permitAll()
+                .requestMatchers("/api/address/**").permitAll()
+                .requestMatchers("/api/country/**").permitAll()
+                .requestMatchers("/api/university/**").permitAll()
+                .requestMatchers("/api/study-programs/**").permitAll()
+                .and()
                 .build();
+
     }
 }

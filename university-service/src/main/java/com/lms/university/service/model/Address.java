@@ -30,7 +30,5 @@ public class Address {
     private List<University> universities = new ArrayList<>();
     @OneToMany(mappedBy = "address")
     private List<Faculty> faculties = new ArrayList<>();
-    @OneToMany(mappedBy = "address")
-    private List<User> users = new ArrayList<>();
 
 }
