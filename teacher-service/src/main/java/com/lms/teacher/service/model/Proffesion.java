@@ -14,6 +14,7 @@ public class Proffesion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String name;
     private LocalDate startDate;
     private LocalDate endDate;
 

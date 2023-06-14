@@ -21,5 +21,7 @@ public class ScientificDiscipline {
 
     @OneToMany(mappedBy = "scientificDiscipline")
     List<Proffesion> proffesions = new ArrayList<>();
+    @ManyToOne
+    private TypeOfScientificDiscipline typeOfScientificDiscipline;
 
 }
