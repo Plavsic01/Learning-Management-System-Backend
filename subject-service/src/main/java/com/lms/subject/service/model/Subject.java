@@ -1,9 +1,12 @@
 package com.lms.subject.service.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 
 @Entity
@@ -25,8 +28,8 @@ public class Subject {
     private Long assistantId;
     @Column(nullable = false)
     private Integer ects;
-    @Column(nullable = false)
-    private Boolean mandatory;
+    @Column(columnDefinition = "TINYINT(1)")
+    private Boolean mandatorySubject;
     @Column(nullable = false)
     private Integer numberOfSemesters;
     @Column(nullable = false)
@@ -35,6 +38,9 @@ public class Subject {
     private Integer numberOfPracticalLectures;
     @ManyToOne
     private YearOfStudy yearOfStudy;
+    @OneToMany(mappedBy = "subject")
+    @NotNull
+    private List<SubjectEnrollment> subjectEnrollments;
 
 
 

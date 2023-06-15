@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/api/privileges")
+@RequestMapping(path = "/api/user/privileges")
 public class PrivilegesController extends BaseController<Privileges, PrivilegesDTO,Long> {
     private PrivilegesService service;
     public PrivilegesController(PrivilegesService service) {

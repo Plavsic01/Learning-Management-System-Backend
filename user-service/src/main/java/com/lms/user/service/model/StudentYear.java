@@ -24,5 +24,7 @@ public class StudentYear {
     @ManyToOne
     @NotNull(message = "Student is mandatory")
     private Student student;
+    @NotNull(message = "Year Of Study is mandatory")
+    private Long yearOfStudyId;
 
 }

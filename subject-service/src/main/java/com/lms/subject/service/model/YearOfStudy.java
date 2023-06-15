@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,7 +18,7 @@ public class YearOfStudy {
     private Long id;
     private Integer year;
     @OneToMany(mappedBy = "yearOfStudy")
-    List<Subject> subjects;
+    private List<Subject> subjects = new ArrayList<>();
     private Long studyProgramId;
 
 }

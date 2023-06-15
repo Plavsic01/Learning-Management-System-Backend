@@ -16,7 +16,7 @@ public class StudentYearDTO {
     private LocalDate dateOfEnrollment;
     private String indexNo;
     private StudentStudyYearDTO student;
-
+    private YearOfStudyDTO yearOfStudy;
     public StudentYearDTO(StudentYear studentYear) {
         this.id = studentYear.getId();
         this.dateOfEnrollment = studentYear.getDateOfEnrollment();
@@ -24,9 +24,11 @@ public class StudentYearDTO {
         this.student = new StudentStudyYearDTO(studentYear.getStudent());
     }
 
-    public StudentYearDTO(Long id, LocalDate dateOfEnrollment, String indexNo) {
-        this.id = id;
-        this.dateOfEnrollment = dateOfEnrollment;
-        this.indexNo = indexNo;
-    }
+//    public StudentYearDTO(Long id, LocalDate dateOfEnrollment, String indexNo) {
+//        this.id = id;
+//        this.dateOfEnrollment = dateOfEnrollment;
+//        this.indexNo = indexNo;
+//        ,YearOfStudyDTO yearOfStudy
+//        this.yearOfStudy = yearOfStudy;
+//    }
 }

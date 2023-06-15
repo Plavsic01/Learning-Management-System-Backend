@@ -56,12 +56,12 @@ public class SecurityConfiguration {
                 .and()
                 .csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/login").permitAll()
-                .requestMatchers("/api/users/**").permitAll()
-                .requestMatchers("/api/privileges/**").permitAll()
-                .requestMatchers("/api/user-privileges/**").permitAll()
-                .requestMatchers("/api/students/**").permitAll()
-                .requestMatchers("/api/student-year/**").permitAll()
+                .requestMatchers("/api/user/login").permitAll()
+                .requestMatchers("/api/user/users/**").permitAll()
+                .requestMatchers("/api/user/privileges/**").permitAll()
+                .requestMatchers("/api/user/user-privileges/**").permitAll()
+                .requestMatchers("/api/user/students/**").permitAll()
+                .requestMatchers("/api/user/student-year/**").permitAll()
                 .and()
                 .build();
 

@@ -17,7 +17,6 @@ public abstract class BaseService<T,P,I> {
 
     public abstract P convertToDTO(T object);
 
-    // MOGUCE UKLANJANJE convertArrayToDTO I findAll METODE
     public List<P> convertArrayToDTO(Iterable<T> array) {
         List<P> newArray = new ArrayList<>();
         array.forEach(element -> {

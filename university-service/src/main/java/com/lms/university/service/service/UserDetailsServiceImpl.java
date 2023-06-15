@@ -28,7 +28,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
             InstanceInfo userService = eurekaClient.getApplication("user-service").getInstances().get(0);
 
-            UserDTO userDTO = webClient.get().uri(String.format("%sapi/users?username=%s",userService.getHomePageUrl(),username))
+            UserDTO userDTO = webClient.get().uri(String.format("%sapi/user/users?username=%s",userService.getHomePageUrl(),username))
                     .retrieve().bodyToMono(UserDTO.class).block();
 
 
