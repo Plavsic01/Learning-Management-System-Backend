@@ -22,4 +22,3 @@ INSERT INTO `users`.`student_year` (`date_of_enrollment`, `index_no`, `year_of_s
 INSERT INTO `users`.`student_year` (`date_of_enrollment`, `index_no`, `year_of_study_id`, `student_id`) VALUES ('2020-09-28', '2020/272518', '2', '2');
 INSERT INTO `users`.`student_year` (`id`, `date_of_enrollment`, `index_no`, `year_of_study_id`, `student_id`) VALUES ('3', '2222-02-22', '2021/222333', '2', '1');
 
-

@@ -7,7 +7,7 @@ import com.lms.teacher.service.service.base.TeacherService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 @RestController
-@RequestMapping(path = "/api/teacher")
+@RequestMapping(path = "/api/teacher/teachers")
 public class TeacherController extends BaseController<Teacher, TeacherDTO,Long> {
 
     private TeacherService service;

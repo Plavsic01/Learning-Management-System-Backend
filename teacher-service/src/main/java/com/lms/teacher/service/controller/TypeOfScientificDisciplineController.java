@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/api/typeOfScientificDiscipline")
+@RequestMapping(path = "/api/teacher/typeOfScientificDiscipline")
 public class TypeOfScientificDisciplineController extends BaseController<TypeOfScientificDiscipline, TypeOfScientificDisciplineDTO, Long> {
 
     private TypeOfScientificDisciplineService service;

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/api/profession")
+@RequestMapping(path = "/api/teacher/profession")
 public class ProffesionController extends BaseController<Proffesion, ProffesionsDTO,Long> {
 
     private ProffesionService service;
