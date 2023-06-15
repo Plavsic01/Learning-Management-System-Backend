@@ -39,6 +39,10 @@ public class UserService extends BaseService<User, UserDTO,Long> {
         return userRepository.findByUsername(username);
     }
 
+    public UserDTO findByUserId(Long id){
+        return convertToDTO(userRepository.findById(id).get());
+    }
+
     @Override
     public UserDTO convertToDTO(User object) {
 

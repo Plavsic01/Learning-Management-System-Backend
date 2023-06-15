@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/api/city")
+@RequestMapping(path = "/api/university/city")
 public class CityController extends BaseController<City,CityDTO,Long> {
 
     private CityService service;

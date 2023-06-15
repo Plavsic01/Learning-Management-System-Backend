@@ -56,12 +56,9 @@ public class SecurityConfiguration {
                 .and()
                 .csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/login").permitAll()
-//                .requestMatchers("/api/users/**").permitAll()
-//                .requestMatchers("/api/privileges/**").permitAll()
-//                .requestMatchers("/api/user-privileges/**").permitAll()
-//                .requestMatchers("/api/students/**").permitAll()
-//                .requestMatchers("/api/student-year/**").permitAll()
+                .requestMatchers("/api/subject/subjects/**").permitAll()
+                .requestMatchers("/api/subject/year-of-study/**").permitAll()
+                .requestMatchers("/api/subject/subject-enrollment/**").permitAll()
                 .and()
                 .build();
 

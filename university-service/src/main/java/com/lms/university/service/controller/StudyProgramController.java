@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/api/study-programs")
+@RequestMapping(path = "/api/university/study-programs")
 public class StudyProgramController extends BaseController<StudyProgram,StudyProgramDTO,Long> {
     private StudyProgramService service;
     public StudyProgramController(StudyProgramService service) {

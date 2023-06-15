@@ -12,8 +12,9 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "/api/users")
+@RequestMapping(path = "/api/user/users")
 public class UserController extends BaseController<User,UserDTO,Long> {
+
     private UserService service;
     public UserController(UserService service) {
         super(service);
@@ -22,7 +23,7 @@ public class UserController extends BaseController<User,UserDTO,Long> {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public UserDTO getOne(@RequestParam("username") String username){
+    public UserDTO getOneByUsername(@RequestParam("username") String username){
         return service.findByUsernameDTO(username);
     }
 

@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @AllArgsConstructor
-@RequestMapping("/api")
+@RequestMapping("/api/user")
 public class LoginController {
 
     @Autowired

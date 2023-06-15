@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/api/country")
+@RequestMapping(path = "/api/university/country")
 public class CountryController extends BaseController<Country,CountryDTO,Long> {
 
     private CountryService service;

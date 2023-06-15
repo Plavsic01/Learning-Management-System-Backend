@@ -1,4 +1,4 @@
-package com.lms.subject.service.dto;
+package com.lms.subject.service.dto.userDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

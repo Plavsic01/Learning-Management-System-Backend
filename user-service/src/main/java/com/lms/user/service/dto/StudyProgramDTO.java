@@ -1,15 +1,14 @@
-package com.lms.subject.service.dto;
+package com.lms.user.service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class PrivilegesInUserDTO {
-
+@AllArgsConstructor
+@Data
+public class StudyProgramDTO {
     private Long id;
-    private String roleName;
+    private String name;
 
 }
