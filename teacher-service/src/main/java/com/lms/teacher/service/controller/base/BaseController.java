@@ -1,6 +1,6 @@
 package com.lms.teacher.service.controller.base;
 
-import com.lms.university.service.service.base.BaseService;
+import com.lms.teacher.service.service.base.BaseService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 
 public abstract class BaseController<T,P,I> {
 

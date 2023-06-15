@@ -7,9 +7,6 @@
         <option value="$PROJECT_DIR$/university-service/pom.xml" />
         <option value="$PROJECT_DIR$/discovery-server/pom.xml" />
         <option value="$PROJECT_DIR$/teacher-service/pom.xml" />
-        <option value="$PROJECT_DIR$/user-service/pom.xml" />
-        <option value="$PROJECT_DIR$/subject-service/pom.xml" />
-        <option value="$PROJECT_DIR$/gateway/pom.xml" />
       </list>
     </option>
   </component>
