@@ -14,10 +14,13 @@ public class StudyProgram {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
+//    @Column(nullable = false)
     @NotNull(message = "Study program name is mandatory")
     private String name;
-    @Column(nullable = false,unique = true)
+//    @NotNull(message = "Description is mandatory") //DODATI OVO i IZMENITI DTO
+//    private String description;
+
+//    @Column(nullable = false,unique = true)
     @NotNull(message = "Coordinator is mandatory")
     private Long coordinatorId;
     @ManyToOne(optional = false)

@@ -17,30 +17,34 @@ public class Subject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
+
+    @NotNull(message = "Subject Name is mandatory")
     private String name;
     @Lob
-    @Column(nullable = false)
+    @NotNull(message = "Syllabus is mandatory")
     private String syllabus;
-    @Column(nullable = false)
-    private Long teacherId;
-    @Column(nullable = false)
-    private Long assistantId;
-    @Column(nullable = false)
+    @NotNull(message = "Ects is mandatory")
     private Integer ects;
     @Column(columnDefinition = "TINYINT(1)")
+    @NotNull(message = "Is Subject Mandatory is mandatory")
     private Boolean mandatorySubject;
-    @Column(nullable = false)
+    @NotNull(message = "Number Of Semesters is mandatory")
     private Integer numberOfSemesters;
-    @Column(nullable = false)
+    @NotNull(message = "Number Of Lectures is mandatory")
     private Integer numberOfLectures;
-    @Column(nullable = false)
+    @NotNull(message = "Number Of Practical Lectures is mandatory")
     private Integer numberOfPracticalLectures;
     @ManyToOne
+    @NotNull(message = "Year Of Study is mandatory")
     private YearOfStudy yearOfStudy;
     @OneToMany(mappedBy = "subject")
-    @NotNull
     private List<SubjectEnrollment> subjectEnrollments;
+    @OneToMany(mappedBy = "subject")
+    private List<Notification> notifications;
+    @OneToMany(mappedBy = "subject")
+    private List<TeacherOnRealisation> teachersOnRealisation;
+
+
 
 
 

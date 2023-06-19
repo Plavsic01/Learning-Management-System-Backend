@@ -1,5 +1,5 @@
 package com.lms.university.service.service;
-import com.lms.university.service.dto.UserDTO;
+import com.lms.university.service.dto.userDTO.UserDTO;
 import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
 import jakarta.transaction.Transactional;

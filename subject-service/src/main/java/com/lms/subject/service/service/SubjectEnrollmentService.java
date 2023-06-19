@@ -14,9 +14,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import java.util.List;
+
 @Service
 public class SubjectEnrollmentService extends BaseService<SubjectEnrollment,SubjectEnrollmentDTO,Long> {
-
+    @Autowired
     private SubjectEnrollmentRepository repository;
     @Autowired
     private SubjectService subjectService;
@@ -55,6 +57,14 @@ public class SubjectEnrollmentService extends BaseService<SubjectEnrollment,Subj
                 .retrieve().bodyToMono(StudentDTO.class).block();
 
         return studentDTO;
+    }
+
+    public List<SubjectEnrollmentDTO> findAllByStudentIdAndFinalGradeIsNull(Long studentId){
+        return convertArrayToDTO(repository.findAllByStudentIdAndFinalGradeIsNull(studentId));
+    }
+
+    public List<SubjectEnrollmentDTO> findAllByStudentIdAndFinalGradeIsNotNull(Long studentId){
+        return convertArrayToDTO(repository.findAllByStudentIdAndFinalGradeIsNotNull(studentId));
     }
 
 }

@@ -1,7 +1,7 @@
 package com.lms.user.service.service;
 
-import com.lms.user.service.dto.StudentDTO;
-import com.lms.user.service.dto.StudentYearDTO;
+import com.lms.user.service.dto.studentDTO.StudentDTO;
+import com.lms.user.service.dto.studentDTO.StudentYearDTO;
 import com.lowagie.text.*;
 import com.lowagie.text.pdf.PdfWriter;
 import jakarta.servlet.http.HttpServletResponse;
@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.List;
 
 @Service
 public class PDFGeneratorService {

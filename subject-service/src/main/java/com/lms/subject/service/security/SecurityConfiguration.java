@@ -59,6 +59,8 @@ public class SecurityConfiguration {
                 .requestMatchers("/api/subject/subjects/**").permitAll()
                 .requestMatchers("/api/subject/year-of-study/**").permitAll()
                 .requestMatchers("/api/subject/subject-enrollment/**").permitAll()
+                .requestMatchers("/api/subject/notification/**").permitAll()
+                .requestMatchers("/api/subject/teacher-on-realisation/**").permitAll()
                 .and()
                 .build();
 

@@ -10,4 +10,6 @@ import java.util.Optional;
 @Repository
 public interface YearOfStudyRepository extends BaseRepository<YearOfStudy,Long> {
 
+    List<YearOfStudy> findAllByStudyProgramId(Long studyProgramId);
+
 }

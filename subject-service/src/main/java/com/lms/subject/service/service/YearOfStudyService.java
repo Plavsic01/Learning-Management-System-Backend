@@ -12,9 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import java.util.List;
+
 @Service
 public class YearOfStudyService extends BaseService<YearOfStudy,YearOfStudyDTO,Long> {
-
+    @Autowired
     private YearOfStudyRepository repository;
     @Autowired
     private WebClient webClient;
@@ -27,8 +29,12 @@ public class YearOfStudyService extends BaseService<YearOfStudy,YearOfStudyDTO,L
     @Override
     public YearOfStudyDTO convertToDTO(YearOfStudy object) {
         YearOfStudyDTO yearOfStudyDTO = new YearOfStudyDTO(object);
-        yearOfStudyDTO.setStudyProgram(findStudyProgram(object.getId()));
+        yearOfStudyDTO.setStudyProgram(findStudyProgram(object.getStudyProgramId()));
         return yearOfStudyDTO;
+    }
+
+    public List<YearOfStudyDTO> findAllByStudyProgramId(Long studyProgramId){
+        return convertArrayToDTO(repository.findAllByStudyProgramId(studyProgramId));
     }
 
 

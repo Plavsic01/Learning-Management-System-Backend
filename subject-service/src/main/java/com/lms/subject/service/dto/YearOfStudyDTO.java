@@ -27,7 +27,7 @@ public class YearOfStudyDTO {
     private List<SubjectDTO> convertSubjectToDTO(List<Subject> subjects){
         List<SubjectDTO> subjectsDTO = new ArrayList<>();
         for(Subject s:subjects){
-            subjectsDTO.add(new SubjectDTO(s.getId(),s.getName(),s.getSyllabus(),s.getTeacherId(),s.getAssistantId(),
+            subjectsDTO.add(new SubjectDTO(s.getId(),s.getName(),s.getSyllabus(),
                     s.getEcts(),s.getMandatorySubject(),s.getNumberOfSemesters(),s.getNumberOfLectures(),s.getNumberOfPracticalLectures()));
         }
         return subjectsDTO;
