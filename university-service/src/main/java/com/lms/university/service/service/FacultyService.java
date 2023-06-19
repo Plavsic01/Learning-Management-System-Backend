@@ -17,7 +17,8 @@ import java.util.List;
 
 @Service
 public class FacultyService extends BaseService<Faculty, FacultyDTO,Long> {
-
+    @Autowired
+    private FacultyRepository repository;
     @Autowired
     private AddressService addressService;
 
@@ -25,7 +26,7 @@ public class FacultyService extends BaseService<Faculty, FacultyDTO,Long> {
     private UniversityService universityService;
 
     @Autowired
-    StudyProgramService studyProgramService;
+    private StudyProgramService studyProgramService;
 
     public FacultyService(FacultyRepository repository) {
         super(repository);
@@ -53,6 +54,11 @@ public class FacultyService extends BaseService<Faculty, FacultyDTO,Long> {
                         object.getUniversity().getDateOfEstablishment(),object.getUniversity().getEmail(),
                         object.getUniversity().getPhone(),addressUniversityDTO,object.getUniversity().getRectorId()),
                 studyProgramsDTO);
+    }
+
+
+    public List<FacultyDTO> findAllByUniversityId(Long id){
+        return convertArrayToDTO(this.repository.findAllByUniversityId(id));
     }
 
 }

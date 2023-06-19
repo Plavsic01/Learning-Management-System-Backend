@@ -3,6 +3,7 @@ package com.lms.user.service.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -36,13 +37,13 @@ public class User {
     @Column(nullable = false)
     @NotNull(message = "Phone is mandatory")
     private String phone;
-    @Column(nullable = false)
+    @Column(nullable = false,unique = true)
     @NotNull(message = "Jmbg is mandatory")
     private String jmbg;
     @Column(nullable = false)
     @NotNull(message = "Date of Birth is mandatory")
     private LocalDate DOB;
-    @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "user")
     private List<UserPrivileges> userPrivileges;
 
 }

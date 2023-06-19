@@ -1,12 +1,11 @@
-package com.lms.user.service.dto;
+package com.lms.user.service.dto.studentDTO;
 
+import com.lms.user.service.dto.UserDTO;
 import com.lms.user.service.model.Student;
-import com.lms.user.service.model.StudentYear;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor

@@ -1,4 +1,4 @@
-package com.lms.university.service.dto;
+package com.lms.university.service.dto.userDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

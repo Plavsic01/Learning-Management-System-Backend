@@ -1,6 +1,6 @@
 package com.lms.user.service.service;
 
-import com.lms.user.service.dto.StudentYearDTO;
+import com.lms.user.service.dto.studentDTO.StudentYearDTO;
 import com.lms.user.service.dto.YearOfStudyDTO;
 import com.lms.user.service.model.StudentYear;
 import com.lms.user.service.repository.StudentYearRepository;

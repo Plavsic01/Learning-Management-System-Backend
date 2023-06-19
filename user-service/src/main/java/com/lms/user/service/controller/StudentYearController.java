@@ -1,8 +1,7 @@
 package com.lms.user.service.controller;
 
 import com.lms.user.service.controller.base.BaseController;
-import com.lms.user.service.dto.StudentYearDTO;
-import com.lms.user.service.dto.UserDTO;
+import com.lms.user.service.dto.studentDTO.StudentYearDTO;
 import com.lms.user.service.model.StudentYear;
 import com.lms.user.service.service.StudentYearService;
 import org.springframework.beans.factory.annotation.Autowired;

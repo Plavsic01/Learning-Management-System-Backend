@@ -10,6 +10,7 @@ import com.lms.user.service.model.UserPrivileges;
 import com.lms.user.service.repository.UserRepository;
 import com.lms.user.service.service.base.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -32,7 +33,13 @@ public class UserService extends BaseService<User, UserDTO,Long> {
     public UserDTO findByUsernameDTO(String username){
         Optional<User> user = userRepository.findByUsername(username);
         return new UserDTO(user.get());
+    }
 
+    @Override
+    public UserDTO save(User obj) {
+        String password = new BCryptPasswordEncoder().encode(obj.getPassword());
+        obj.setPassword(password);
+        return super.save(obj);
     }
 
     public Optional<User> findByUsername(String username){
@@ -45,7 +52,6 @@ public class UserService extends BaseService<User, UserDTO,Long> {
 
     @Override
     public UserDTO convertToDTO(User object) {
-
             return new UserDTO(object);
 
     }

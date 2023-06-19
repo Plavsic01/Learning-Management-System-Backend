@@ -14,10 +14,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @AllArgsConstructor
@@ -38,16 +38,16 @@ public class LoginController {
 
 
     @RequestMapping(path = "/login",method = RequestMethod.POST)
-    public ResponseEntity<String> login(@RequestBody LoginDTO loginDTO){
-        System.out.println(passwordEncoder.encode(loginDTO.getPassword()));
+    public ResponseEntity<Map<String,String>> login(@RequestBody LoginDTO loginDTO){
+//        System.out.println(passwordEncoder.encode(loginDTO.getPassword()));
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
                 loginDTO.getUsername(),loginDTO.getPassword());
         Authentication auth = authenticationManager.authenticate(token);
         SecurityContextHolder.getContext().setAuthentication(auth);
-
         String jwt = tokenUtils.generateToken(userDetailsService.loadUserByUsername(loginDTO.getUsername()));
-        System.out.println(jwt);
-        return new ResponseEntity<>(jwt, HttpStatus.OK);
+        Map<String,String> tokenMap = new HashMap<>();
+        tokenMap.put("token",jwt);
+        return new ResponseEntity<>(tokenMap, HttpStatus.OK);
     }
 
 

@@ -34,7 +34,7 @@ public class University {
     @ManyToOne(optional = false)
     @NotNull(message = "Address is mandatory")
     private Address address;
-    @Column(nullable = false,unique = true)
+    @Column(nullable = false)
     @NotNull(message = "Rector is mandatory")
     private Long rectorId;
     @OneToMany(mappedBy = "university")

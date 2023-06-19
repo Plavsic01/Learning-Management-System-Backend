@@ -25,7 +25,7 @@ public class Faculty {
     @ManyToOne(optional = false)
     @NotNull(message = "Address is mandatory")
     private Address address;
-    @Column(nullable = false,unique = true)
+    @Column(nullable = false)
     @NotNull(message = "Dean is mandatory")
     private Long deanId;
     @OneToMany(mappedBy = "faculty")
