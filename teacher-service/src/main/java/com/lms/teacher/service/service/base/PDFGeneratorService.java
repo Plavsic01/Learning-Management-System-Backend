@@ -36,11 +36,17 @@ public class PDFGeneratorService {
         for(TeacherDTO s:service.findAll()){
 
             String teacherData = "\nID: " + s.getId() + "\nUser ID: " + s.getUser().getId()
-                    //dodati user details
-                    + "\nBiography: " + s.getBiography()
-                    + "\nProfessions:" + s.getProfessions();
+                    +"\nFirst name: " + s.getUser().getFirstName()
+                    + "\nLast name: " + s.getUser().getLastName()
+                    + "\nEmail: " + s.getUser().getEmail()
+                    + "\nBiography: " + s.getBiography();
+
+            if (s.getProfessions().stream().count() > 0) {
+                teacherData += "\nProfessions: " + s.getProfessions();
+            }
+
             Paragraph studentParagraph = new Paragraph(teacherData,fontParagraph);
-            studentParagraph.setAlignment(Paragraph.ALIGN_CENTER);
+            studentParagraph.setAlignment(Paragraph.ALIGN_LEFT);
             studentParagraph.setLeading(20);
             document.add(studentParagraph);
 
