@@ -16,6 +16,6 @@ import java.util.List;
 public class ScientificDisciplineDTO {
     private Long id;
     private String name;
-    List<ProffesionsDTO> proffesions = new ArrayList<>();
+   // List<ProffesionsDTO> proffesions = new ArrayList<>();
     TypeOfScientificDisciplineDTO typeOfScientificDisciplines;
 }

@@ -19,8 +19,8 @@ public class ScientificDiscipline {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "scientificDiscipline")
-    List<Proffesion> proffesions = new ArrayList<>();
+   // @OneToMany(mappedBy = "scientificDiscipline")
+ //   List<Proffesion> proffesions = new ArrayList<>();
     @ManyToOne
     private TypeOfScientificDiscipline typeOfScientificDiscipline;
 

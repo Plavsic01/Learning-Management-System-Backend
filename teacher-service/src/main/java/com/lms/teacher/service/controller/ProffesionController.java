@@ -14,6 +14,5 @@ public class ProffesionController extends BaseController<Proffesion, Proffesions
 
     public ProffesionController(ProffesionService service) {
         super(service);
-        this.service = service;
     }
 }

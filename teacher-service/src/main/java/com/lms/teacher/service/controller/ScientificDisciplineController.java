@@ -15,6 +15,5 @@ public class ScientificDisciplineController extends BaseController<ScientificDis
 
     public ScientificDisciplineController(ScientificDisciplineService service) {
         super(service);
-        this.service = service;
     }
 }

@@ -12,7 +12,9 @@ import java.util.List;
 @Data
 public class TeacherDTO {
     private Long id;
-    private Long userId;
+    private UserDTO user;
+    private String firstName;
+    private String lastName;
     private String biography;
     private List<ProffesionsDTO> professions = new ArrayList<>();
 

@@ -57,6 +57,9 @@ public class SecurityConfiguration {
                 .csrf().disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/api/teacher/teachers/**").permitAll()
+                .requestMatchers("/api/teacher/profession/**").permitAll()
+                .requestMatchers("/api/teacher/typeOfScientificDiscipline/**").permitAll()
+                .requestMatchers("/api/teacher/scientificDiscipline/**").permitAll()
                 .and()
                 .build();
 

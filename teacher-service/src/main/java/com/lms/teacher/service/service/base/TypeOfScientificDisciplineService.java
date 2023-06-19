@@ -26,13 +26,24 @@ public class TypeOfScientificDisciplineService extends BaseService <TypeOfScient
         typeOfScientificDisciplineDTO.setId(object.getId());
         typeOfScientificDisciplineDTO.setName(object.getName());
 
-        List<ScientificDisciplineDTO> scientificDisciplineDTOs = new ArrayList<>();
-        for (ScientificDiscipline scientificDiscipline : object.getScientificDisciplines()) {
-            ScientificDisciplineDTO scientificDisciplineDTO = scientificDisciplineService.convertToDTO(scientificDiscipline);
-            scientificDisciplineDTOs.add(scientificDisciplineDTO);
-        }
+        // Konvertovanje liste ScientificDiscipline u DTO objekte
+        List<ScientificDisciplineDTO> scientificDisciplineDTOs = convertScientificDisciplinesToDTOs(object.getScientificDisciplines());
         typeOfScientificDisciplineDTO.setScientificDisciplines(scientificDisciplineDTOs);
 
         return typeOfScientificDisciplineDTO;
+    }
+
+    private List<ScientificDisciplineDTO> convertScientificDisciplinesToDTOs(List<ScientificDiscipline> scientificDisciplines) {
+        List<ScientificDisciplineDTO> scientificDisciplineDTOs = new ArrayList<>();
+
+        for (ScientificDiscipline scientificDiscipline : scientificDisciplines) {
+            ScientificDisciplineDTO scientificDisciplineDTO = new ScientificDisciplineDTO();
+            scientificDisciplineDTO.setId(scientificDiscipline.getId());
+            scientificDisciplineDTO.setName(scientificDiscipline.getName());
+
+            scientificDisciplineDTOs.add(scientificDisciplineDTO);
+        }
+
+        return scientificDisciplineDTOs;
     }
 }

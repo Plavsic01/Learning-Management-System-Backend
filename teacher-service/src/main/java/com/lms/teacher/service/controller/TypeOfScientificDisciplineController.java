@@ -1,6 +1,5 @@
 package com.lms.teacher.service.controller;
 
-import com.fasterxml.jackson.databind.ser.Serializers;
 import com.lms.teacher.service.controller.base.BaseController;
 import com.lms.teacher.service.dto.TypeOfScientificDisciplineDTO;
 import com.lms.teacher.service.model.TypeOfScientificDiscipline;
