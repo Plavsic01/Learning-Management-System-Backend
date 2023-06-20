@@ -49,8 +49,6 @@ public class SubjectDTO {
         this.id = id;
         this.name = name;
         this.syllabus = syllabus;
-//        this.teacherId = teacherId;
-//        this.assistantId = assistantId;
         this.ects = ects;
         this.mandatorySubject = mandatorySubject;
         this.numberOfSemesters = numberOfSemesters;

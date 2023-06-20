@@ -2,9 +2,11 @@ package com.lms.user.service.service;
 
 import com.lms.user.service.dto.studentDTO.StudentDTO;
 import com.lms.user.service.dto.UserDTO;
+import com.lms.user.service.exception.DoesNotExistException;
 import com.lms.user.service.model.Student;
 import com.lms.user.service.repository.StudentRepository;
 import com.lms.user.service.service.base.BaseService;
+import jakarta.ws.rs.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,6 +54,13 @@ public class StudentService extends BaseService<Student, StudentDTO,Long> {
         studentDTO.setUser(userDTO);
         studentDTO.setStudentYears(studentYearService.findAllByStudentId(student.getId()));
         return studentDTO;
+    }
+
+    public StudentDTO findByUserId(Long userId){
+        if(this.repository.findByUserId(userId).isPresent()){
+            return convertToDTO(this.repository.findByUserId(userId).get());
+        }
+        throw new DoesNotExistException();
     }
 
 }

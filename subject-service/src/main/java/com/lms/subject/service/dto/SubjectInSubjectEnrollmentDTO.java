@@ -12,8 +12,6 @@ public class SubjectInSubjectEnrollmentDTO {
     private Long id;
     private String name;
     private String syllabus;
-//    private Long teacherId;
-//    private Long assistantId;
     private Integer ects;
     private Boolean mandatorySubject;
     private Integer numberOfSemesters;
@@ -24,8 +22,6 @@ public class SubjectInSubjectEnrollmentDTO {
         this.id = subject.getId();
         this.name = subject.getName();
         this.syllabus = subject.getSyllabus();
-//        this.teacherId = subject.getTeacherId();
-//        this.assistantId = subject.getAssistantId();
         this.ects = subject.getEcts();
         this.mandatorySubject = subject.getMandatorySubject();
         this.numberOfSemesters = subject.getNumberOfSemesters();

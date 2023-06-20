@@ -3,6 +3,7 @@ package com.lms.subject.service.utils;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,11 +16,12 @@ import java.util.Map;
 
 @Component
 public class TokenUtils {
+
     @Value("${token.secret}")
     private String secret;
 
-    @Value("${token.expiration}")
-    private Long expiration;
+//    @Value("${token.expiration}")
+//    private Long expiration;
 
     @Bean
     public Key getKey() {
@@ -60,13 +62,14 @@ public class TokenUtils {
         return username.equals(userDetails.getUsername()) && !isExpired(token);
     }
 
-    public String generateToken(UserDetails userDetails){
-        Map<String,Object> claims = new HashMap<>();
-        claims.put("sub",userDetails.getUsername());
-        claims.put("created",new Date(System.currentTimeMillis()));
-        claims.put("roles",userDetails.getAuthorities());
-
-        return Jwts.builder().setClaims(claims).setExpiration(new Date(System.currentTimeMillis() + expiration * 1000))
-                .signWith(getKey()).compact();
-    }
+//    public String generateToken(UserDetails userDetails){
+//
+//        Map<String,Object> claims = new HashMap<>();
+//        claims.put("sub",userDetails.getUsername());
+//        claims.put("created",new Date(System.currentTimeMillis()));
+//        claims.put("roles",userDetails.getAuthorities());
+//
+//        return Jwts.builder().setClaims(claims).setExpiration(new Date(System.currentTimeMillis() + expiration * 1000))
+//                .signWith(getKey()).compact();
+//    }
 }

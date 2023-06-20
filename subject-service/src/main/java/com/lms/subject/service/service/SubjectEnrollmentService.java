@@ -3,6 +3,7 @@ package com.lms.subject.service.service;
 import com.lms.subject.service.dto.SubjectEnrollmentDTO;
 import com.lms.subject.service.dto.SubjectInSubjectEnrollmentDTO;
 import com.lms.subject.service.dto.studentDTO.StudentDTO;
+import com.lms.subject.service.exception.DoesNotExistException;
 import com.lms.subject.service.model.Subject;
 import com.lms.subject.service.model.SubjectEnrollment;
 import com.lms.subject.service.repository.SubjectEnrollmentRepository;
@@ -33,18 +34,16 @@ public class SubjectEnrollmentService extends BaseService<SubjectEnrollment,Subj
     @Override
     public SubjectEnrollmentDTO convertToDTO(SubjectEnrollment object) {
 
-        // uradjeno zbog ne prikazivanja na put i post metodama
-
         SubjectEnrollmentDTO subjectEnrollmentDTO = new SubjectEnrollmentDTO(object);
         subjectEnrollmentDTO.setStudent(findStudent(object.getStudentId()));
 
         if(object.getSubject() != null){
             if(subjectService.findOneWithoutDTO(object.getSubject().getId()).isPresent()){
                 Subject subject = subjectService.findOneWithoutDTO(object.getSubject().getId()).get();
-                SubjectInSubjectEnrollmentDTO subjectInSubjectEnrollmentDTO = new SubjectInSubjectEnrollmentDTO(subject);
-                subjectEnrollmentDTO.setSubject(subjectInSubjectEnrollmentDTO);
+//                SubjectInSubjectEnrollmentDTO subjectInSubjectEnrollmentDTO = new SubjectInSubjectEnrollmentDTO(subject);
+//                subjectEnrollmentDTO.setSubject(subjectInSubjectEnrollmentDTO);
             }else{
-                throw new NotFoundException();
+                throw new DoesNotExistException();
             }
         }
         return subjectEnrollmentDTO;

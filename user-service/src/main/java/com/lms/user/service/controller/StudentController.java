@@ -27,4 +27,11 @@ public class StudentController extends BaseController<Student,StudentDTO,Long> {
         return service.findAll();
     }
 
+    @GetMapping("/userId/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public StudentDTO getByUserId(@PathVariable Long id){
+        return service.findByUserId(id);
+    }
+
+
 }

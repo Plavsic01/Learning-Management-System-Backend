@@ -15,13 +15,15 @@ public class SubjectEnrollmentDTO {
     private Integer numberOfAttempts;
     private Long points;
     private StudentDTO student;
-    private SubjectInSubjectEnrollmentDTO subject;
+//    private SubjectInSubjectEnrollmentDTO subject;
 
+    private SubjectDTO subject;
     public SubjectEnrollmentDTO(SubjectEnrollment subjectEnrollment) {
         this.id = subjectEnrollment.getId();
         this.finalGrade = subjectEnrollment.getFinalGrade();
         this.numberOfAttempts = subjectEnrollment.getNumberOfAttempts();
         this.points = subjectEnrollment.getPoints();
-        this.subject = new SubjectInSubjectEnrollmentDTO(subjectEnrollment.getSubject());
+//        this.subject = new SubjectInSubjectEnrollmentDTO(subjectEnrollment.getSubject());
+        this.subject = new SubjectDTO(subjectEnrollment.getSubject());
     }
 }

@@ -1,8 +1,11 @@
 package com.lms.user.service.utils;
 
+import com.lms.user.service.model.User;
+import com.lms.user.service.service.UserService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,9 +18,11 @@ import java.util.Map;
 
 @Component
 public class TokenUtils {
+
+    @Autowired
+    UserService userService;
     @Value("${token.secret}")
     private String secret;
-
     @Value("${token.expiration}")
     private Long expiration;
 
@@ -61,7 +66,9 @@ public class TokenUtils {
     }
 
     public String generateToken(UserDetails userDetails){
+        User user = userService.findByUsername(userDetails.getUsername()).get();
         Map<String,Object> claims = new HashMap<>();
+        claims.put("id",user.getId());
         claims.put("sub",userDetails.getUsername());
         claims.put("created",new Date(System.currentTimeMillis()));
         claims.put("roles",userDetails.getAuthorities());

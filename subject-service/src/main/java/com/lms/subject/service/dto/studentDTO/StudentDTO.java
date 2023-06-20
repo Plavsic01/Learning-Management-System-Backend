@@ -15,26 +15,6 @@ import java.util.List;
 public class StudentDTO {
     private Long id;
     private UserDTO user;
-//    private List<StudentYearDTO> studentYears;
 
-
-//    public StudentDTO(Student student) {
-//        this.id = student.getId();
-//        this.studentYears = studentYearsDTO(student);
-//    }
-
-
-
-
-//    private List<StudentYearDTO> studentYearsDTO(Student student){
-//        List<StudentYearDTO> students = new ArrayList<>();
-//        if(student.getStudentYears() != null){
-//
-//            for(StudentYear s :student.getStudentYears()){
-//            students.add(new StudentYearDTO(s.getId(),s.getDateOfEnrollment(),s.getIndexNo()));
-//            }
-//        }
-//        return students;
-//    }
 
 }

@@ -64,6 +64,5 @@ public class SecurityConfiguration {
                 .requestMatchers("/api/user/student-year/**").permitAll()
                 .and()
                 .build();
-
     }
 }

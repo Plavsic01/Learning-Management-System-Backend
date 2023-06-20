@@ -32,14 +32,14 @@ public class SecurityConfiguration {
         return conf.getAuthenticationManager();
     }
 
-    @Bean
-    public PasswordEncoder getPasswordEncoder(){
-        Map<String,PasswordEncoder> encoders = new HashMap<>();
-        encoders.put("bcrypt",new BCryptPasswordEncoder());
-        DelegatingPasswordEncoder passwordEncoder = new DelegatingPasswordEncoder("bcrypt",encoders);
-        passwordEncoder.setDefaultPasswordEncoderForMatches(encoders.get("bcrypt"));
-        return passwordEncoder;
-    }
+//    @Bean
+//    public PasswordEncoder getPasswordEncoder(){
+//        Map<String,PasswordEncoder> encoders = new HashMap<>();
+//        encoders.put("bcrypt",new BCryptPasswordEncoder());
+//        DelegatingPasswordEncoder passwordEncoder = new DelegatingPasswordEncoder("bcrypt",encoders);
+//        passwordEncoder.setDefaultPasswordEncoderForMatches(encoders.get("bcrypt"));
+//        return passwordEncoder;
+//    }
 
     @Bean
     public AuthTokenFilter authTokenFilterBean(AuthenticationConfiguration conf) throws Exception {

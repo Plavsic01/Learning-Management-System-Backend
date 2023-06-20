@@ -22,15 +22,15 @@ public class SubjectEnrollmentController extends BaseController<SubjectEnrollmen
     }
 
 
-    @GetMapping("/enrolledSubjects/current-enrollment/{id}")
+    @GetMapping("/current-enrollment/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public List<SubjectEnrollmentDTO> getAll(@PathVariable("id") Long id){
+    public List<SubjectEnrollmentDTO> getCurrentSubjects(@PathVariable("id") Long id){
         return service.findAllByStudentIdAndFinalGradeIsNull(id);
     }
 
-    @GetMapping("/enrolledSubjects/passed/{id}")
+    @GetMapping("/passed/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public List<SubjectEnrollmentDTO> fetch(@PathVariable("id") Long id){
+    public List<SubjectEnrollmentDTO> getPassedSubjects(@PathVariable("id") Long id){
         return service.findAllByStudentIdAndFinalGradeIsNotNull(id);
     }
 }
