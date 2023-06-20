@@ -58,17 +58,23 @@ public class SubjectDTO {
 
     public List<NotificationInSubjectDTO> createNotifications(Subject subject){
         List<NotificationInSubjectDTO> notifications = new ArrayList<>();
-        for(Notification n:subject.getNotifications()){
-            notifications.add(new NotificationInSubjectDTO(n.getId(),n.getTitle(),n.getDateOfNotification(),n.getDescription()));
+        if(subject.getNotifications() != null){
+            for(Notification n:subject.getNotifications()){
+                notifications.add(new NotificationInSubjectDTO(n.getId(),n.getTitle(),n.getDateOfNotification(),n.getDescription()));
+            }
         }
         return notifications;
+
     }
 
     public List<TeacherOnRealisationInSubjectDTO> createTeachersOnRealisation(Subject subject){
         List<TeacherOnRealisationInSubjectDTO> teachersOnRealisation = new ArrayList<>();
-        for(TeacherOnRealisation t:subject.getTeachersOnRealisation()){
-            teachersOnRealisation.add(new TeacherOnRealisationInSubjectDTO(t.getId(),t.getTeacherId()));
+        if(subject.getTeachersOnRealisation() != null){
+            for(TeacherOnRealisation t:subject.getTeachersOnRealisation()){
+                teachersOnRealisation.add(new TeacherOnRealisationInSubjectDTO(t.getId(),t.getTeacherId()));
+            }
         }
+
         return teachersOnRealisation;
     }
 

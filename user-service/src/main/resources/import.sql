@@ -1,7 +1,7 @@
 INSERT INTO `users`.`privileges` (`role_name`) VALUES ('ROLE_ADMIN');
 INSERT INTO `users`.`privileges` (`role_name`) VALUES ('ROLE_TEACHER');
 INSERT INTO `users`.`privileges` (`role_name`) VALUES ('ROLE_STUDENT');
-INSERT INTO `users`.`privileges` (`role_name`) VALUES ('ROLE_STUDENT_SERVICE');
+INSERT INTO `users`.`privileges` (`role_name`) VALUES ('ROLE_STUDENT_ADMINISTRATION');
 
 INSERT INTO `users`.`user` (`dob`, `email`, `first_name`, `jmbg`, `last_name`, `password`, `phone`, `username`) VALUES ('2001-03-15', 'andrej@gmail.com', 'Andrej', '210239123', 'Plavsic', '$2a$09$KmjyzEsBvKVeY.NHgPYKveiaanoBj/ysVZK8x0nxLeMRbXDx20tte', '091/213-123', 'admin');
 INSERT INTO `users`.`user` (`dob`, `email`, `first_name`, `jmbg`, `last_name`, `password`, `phone`, `username`) VALUES ('2001-10-21', 'vanja@gmail.com', 'Vanja', '210239100', 'Jovicic', '$2a$09$7OXI4S9z619cuKIq359AvePCa.SzJINprbQ7/vpFg3aKgllFs8/Lq', '091/010-100', 'student1');

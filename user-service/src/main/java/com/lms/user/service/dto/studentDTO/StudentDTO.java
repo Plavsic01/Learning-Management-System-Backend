@@ -19,19 +19,7 @@ public class StudentDTO {
 
     public StudentDTO(Student student) {
         this.id = student.getId();
-//        this.studentYears = studentYearsDTO(student);
     }
-
-//    private List<StudentYearDTO> studentYearsDTO(Student student){
-//        List<StudentYearDTO> students = new ArrayList<>();
-//        if(student.getStudentYears() != null){
-//
-//            for(StudentYear s :student.getStudentYears()){
-//            students.add(new StudentYearDTO(s.getId(),s.getDateOfEnrollment(),s.getIndexNo()));
-//            }
-//        }
-//        return students;
-//    }
 
     public String displayStudentFormatted(){
         return String.format("\nFirst Name: %s\n Last Name: %s\n Date Of Birth: %s\n Jmbg: %s\n Email: %s\n Phone: %s",

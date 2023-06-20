@@ -1,7 +1,11 @@
 package com.lms.user.service.service;
 
+import com.lms.user.service.dto.UserDTO;
+import com.lms.user.service.dto.studentDTO.StudentDTO;
+import com.lms.user.service.dto.studentDTO.StudentStudyYearDTO;
 import com.lms.user.service.dto.studentDTO.StudentYearDTO;
 import com.lms.user.service.dto.YearOfStudyDTO;
+import com.lms.user.service.model.Student;
 import com.lms.user.service.model.StudentYear;
 import com.lms.user.service.repository.StudentYearRepository;
 import com.lms.user.service.service.base.BaseService;
@@ -17,6 +21,11 @@ import java.util.List;
 public class StudentYearService extends BaseService<StudentYear,StudentYearDTO,Long> {
     @Autowired
     private StudentYearRepository repository;
+
+    @Autowired
+    private StudentService studentService;
+    @Autowired
+    private UserService userService;
     @Autowired
     private WebClient webClient;
     @Autowired
@@ -29,6 +38,10 @@ public class StudentYearService extends BaseService<StudentYear,StudentYearDTO,L
     public StudentYearDTO convertToDTO(StudentYear object) {
         StudentYearDTO studentYearDTO = new StudentYearDTO(object);
         studentYearDTO.setYearOfStudy(findYearOfStudy(object.getYearOfStudyId()));
+//        Student student = studentService.findOneWithoutDTO(object.getStudent().getId()).get();
+//        UserDTO user = userService.findByUserId(student.getUserId());
+//        StudentStudyYearDTO studentStudyYearDTO = new StudentStudyYearDTO(student.getId(),user);
+//        studentYearDTO.setStudent(studentStudyYearDTO);
         return studentYearDTO;
     }
 

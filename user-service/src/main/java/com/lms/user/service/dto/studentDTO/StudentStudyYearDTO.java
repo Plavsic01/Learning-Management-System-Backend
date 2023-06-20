@@ -1,5 +1,6 @@
 package com.lms.user.service.dto.studentDTO;
 
+import com.lms.user.service.dto.UserDTO;
 import com.lms.user.service.model.Student;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class StudentStudyYearDTO {
 
     private Long id;
-    private Long userId;
+    private Long  userId;
 
     public StudentStudyYearDTO(Student student) {
         this.id = student.getId();

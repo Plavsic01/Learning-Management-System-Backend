@@ -1,6 +1,7 @@
 package com.lms.subject.service.service;
 
 import com.lms.subject.service.dto.SubjectDTO;
+import com.lms.subject.service.dto.YearOfStudyDTO;
 import com.lms.subject.service.dto.studyProgramDTO.StudyProgramDTO;
 import com.lms.subject.service.model.Subject;
 import com.lms.subject.service.repository.SubjectRepository;
@@ -28,7 +29,8 @@ public class SubjectService extends BaseService<Subject,SubjectDTO,Long> {
     @Override
     public SubjectDTO convertToDTO(Subject object) {
         SubjectDTO subjectDTO = new SubjectDTO(object);
-        StudyProgramDTO studyProgramDTO = yearOfStudyService.findStudyProgram(subjectDTO.getYearOfStudy().getId());
+        YearOfStudyDTO yearOfStudyDTO = yearOfStudyService.findOne(object.getYearOfStudy().getId());
+        StudyProgramDTO studyProgramDTO = yearOfStudyService.findStudyProgram(yearOfStudyDTO.getStudyProgram().getId());
         subjectDTO.getYearOfStudy().setStudyProgram(studyProgramDTO);
         return subjectDTO;
     }

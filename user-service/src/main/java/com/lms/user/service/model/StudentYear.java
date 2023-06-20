@@ -18,7 +18,7 @@ public class StudentYear {
     private Long id;
     @NotNull(message = "DateOfEnrollment is mandatory")
     private LocalDate dateOfEnrollment;
-    @Column(nullable = false)
+    @Column(nullable = false,unique = true)
     @NotNull(message = "Index is mandatory")
     private String indexNo;
     @ManyToOne

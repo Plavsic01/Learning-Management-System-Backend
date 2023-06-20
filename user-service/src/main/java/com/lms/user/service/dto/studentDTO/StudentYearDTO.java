@@ -25,11 +25,4 @@ public class StudentYearDTO {
         this.student = new StudentStudyYearDTO(studentYear.getStudent());
     }
 
-//    public StudentYearDTO(Long id, LocalDate dateOfEnrollment, String indexNo) {
-//        this.id = id;
-//        this.dateOfEnrollment = dateOfEnrollment;
-//        this.indexNo = indexNo;
-//        ,YearOfStudyDTO yearOfStudy
-//        this.yearOfStudy = yearOfStudy;
-//    }
 }

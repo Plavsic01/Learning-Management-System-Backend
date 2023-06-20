@@ -18,6 +18,5 @@ public class YearOfStudyInSubjectDTO {
     public YearOfStudyInSubjectDTO(YearOfStudy yearOfStudy) {
         this.id = yearOfStudy.getId();
         this.year = yearOfStudy.getYear();
-//        this.studyProgramId = yearOfStudy.getStudyProgramId();
     }
 }

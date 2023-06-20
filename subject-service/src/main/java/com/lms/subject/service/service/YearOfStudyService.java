@@ -38,10 +38,10 @@ public class YearOfStudyService extends BaseService<YearOfStudy,YearOfStudyDTO,L
     }
 
 
-    public StudyProgramDTO findStudyProgram(Long yearOfStudyId){
+    public StudyProgramDTO findStudyProgram(Long studyProgramId){
         InstanceInfo universityService = eurekaClient.getApplication("university-service").getInstances().get(0);
 
-        StudyProgramDTO studyProgramDTO = webClient.get().uri(String.format("%sapi/university/study-programs/%s",universityService.getHomePageUrl(),yearOfStudyId))
+        StudyProgramDTO studyProgramDTO = webClient.get().uri(String.format("%sapi/university/study-programs/%s",universityService.getHomePageUrl(),studyProgramId))
                 .retrieve().bodyToMono(StudyProgramDTO.class).block();
 
         return studyProgramDTO;
