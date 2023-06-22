@@ -30,4 +30,6 @@ public class Faculty {
     private Long deanId;
     @OneToMany(mappedBy = "faculty")
     private List<StudyProgram> studyPrograms;
+    @OneToMany(mappedBy = "faculty")
+    private List<Notification> notifications;
 }

@@ -1,6 +1,7 @@
 package com.lms.university.service.dto;
 
 
+import com.lms.university.service.model.Faculty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -35,6 +36,12 @@ public class FacultyDTO {
         this.name = name;
         this.address = address;
         this.deanId = deanId;
+    }
+
+    public FacultyDTO(Faculty faculty) {
+        this.id = faculty.getId();
+        this.name = faculty.getName();
+        this.deanId = faculty.getDeanId();
     }
 
 }

@@ -42,6 +42,18 @@ public class UserService extends BaseService<User, UserDTO,Long> {
         return super.save(obj);
     }
 
+    @Override
+    public UserDTO update(Long id, User updatedEntity) {
+        if(updatedEntity.getPassword().length() > 20){
+            updatedEntity.setPassword(updatedEntity.getPassword());
+        }else{
+            String password = new BCryptPasswordEncoder().encode(updatedEntity.getPassword());
+            updatedEntity.setPassword(password);
+        }
+
+        return super.update(id, updatedEntity);
+    }
+
     public Optional<User> findByUsername(String username){
         return userRepository.findByUsername(username);
     }

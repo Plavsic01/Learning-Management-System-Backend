@@ -1,4 +1,4 @@
-package com.lms.subject.service.model;
+package com.lms.university.service.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -25,7 +25,7 @@ public class Notification {
     @NotNull(message = "Description is mandatory")
     private String description;
     @ManyToOne
-    @NotNull(message = "Subject is mandatory")
-    private Subject subject;
+    @NotNull(message = "Faculty is mandatory")
+    private Faculty faculty;
 
 }
