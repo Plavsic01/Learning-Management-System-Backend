@@ -17,7 +17,6 @@ public class Subject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @NotNull(message = "Subject Name is mandatory")
     private String name;
     @Lob

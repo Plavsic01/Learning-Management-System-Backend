@@ -32,15 +32,6 @@ public class SecurityConfiguration {
         return conf.getAuthenticationManager();
     }
 
-//    @Bean
-//    public PasswordEncoder getPasswordEncoder(){
-//        Map<String,PasswordEncoder> encoders = new HashMap<>();
-//        encoders.put("bcrypt",new BCryptPasswordEncoder());
-//        DelegatingPasswordEncoder passwordEncoder = new DelegatingPasswordEncoder("bcrypt",encoders);
-//        passwordEncoder.setDefaultPasswordEncoderForMatches(encoders.get("bcrypt"));
-//        return passwordEncoder;
-//    }
-
     @Bean
     public AuthTokenFilter authTokenFilterBean(AuthenticationConfiguration conf) throws Exception {
         AuthTokenFilter authTokenFilter = new AuthTokenFilter();
@@ -61,6 +52,7 @@ public class SecurityConfiguration {
                 .requestMatchers("/api/subject/subject-enrollment/**").permitAll()
                 .requestMatchers("/api/subject/notification/**").permitAll()
                 .requestMatchers("/api/subject/teacher-on-realisation/**").permitAll()
+                .requestMatchers("/api/subject/subject-material/**").permitAll()
                 .and()
                 .build();
 
